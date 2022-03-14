@@ -1,0 +1,25 @@
+{
+  "configurations": {
+    "Launch": {
+      "adapter": "vscode-cpptools",
+      "filetypes": ["cpp", "c", "objc", "rust"],
+      "configuration": {
+        "request": "launch",
+        "program": "/home/mustafa/practice/udemy/beginning_C++_programming/new/12_pointers_and_references/09_references/output",
+        "cwd": "/home/mustafa/practice/udemy/beginning_C++_programming/new/12_pointers_and_references/09_references/",
+        "externalConsole": true,
+        "MIMode": "gdb"
+      }
+    },
+    "Attach": {
+      "adapter": "vscode-cpptools",
+      "filetypes": ["cpp", "c", "objc", "rust"], // optional
+      "configuration": {
+        "request": "attach",
+        "program": "/home/mustafa/practice/udemy/beginning_C++_programming/new/12_pointers_and_references/09_references/output",
+        "MIMode": "gdb"
+      }
+    }
+    // ...
+  }
+}
