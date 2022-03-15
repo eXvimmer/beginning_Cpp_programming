@@ -1,0 +1,25 @@
+{
+  "configurations": {
+    "Launch": {
+      "adapter": "vscode-cpptools",
+      "filetypes": ["cpp", "c", "objc", "rust"],
+      "configuration": {
+        "request": "launch",
+        "program": "/home/mustafa/practice/udemy/beginning_C++_programming/new/12_pointers_and_references/10_section_challenge/output",
+        "cwd": "/home/mustafa/practice/udemy/beginning_C++_programming/new/12_pointers_and_references/10_section_challenge/",
+        "externalConsole": true,
+        "MIMode": "gdb"
+      }
+    },
+    "Attach": {
+      "adapter": "vscode-cpptools",
+      "filetypes": ["cpp", "c", "objc", "rust"], // optional
+      "configuration": {
+        "request": "attach",
+        "program": "/home/mustafa/practice/udemy/beginning_C++_programming/new/12_pointers_and_references/10_section_challenge/output",
+        "MIMode": "gdb"
+      }
+    }
+    // ...
+  }
+}
