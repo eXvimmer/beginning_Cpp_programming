@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 int main() {
   int test_scores[5]{1, 2, 3, 4, 5};
