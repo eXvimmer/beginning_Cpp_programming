@@ -1,12 +1,9 @@
 #include <iostream>
 
-using std::cin;
-using std::cout;
-
 int main() {
-  cout << "Enter an amount in cents: ";
+  std::cout << "Enter an amount in cents: ";
   long amount{0};
-  cin >> amount;
+  std::cin >> amount;
 
   // In the US:
   // 1 dollar is 100 cents
@@ -44,12 +41,12 @@ int main() {
 
   pennies = balance;
 
-  cout << "\nYou can provide change for this change as follows:\n";
-  cout << "dollars: " << dollars << '\n';
-  cout << "quarters: " << quarters << '\n';
-  cout << "dimes: " << dimes << '\n';
-  cout << "nickels: " << nickels << '\n';
-  cout << "pennies: " << pennies << '\n';
+  std::cout << "\nYou can provide change for this change as follows:\n";
+  std::cout << "dollars: " << dollars << '\n';
+  std::cout << "quarters: " << quarters << '\n';
+  std::cout << "dimes: " << dimes << '\n';
+  std::cout << "nickels: " << nickels << '\n';
+  std::cout << "pennies: " << pennies << '\n';
 
   return 0;
 }
