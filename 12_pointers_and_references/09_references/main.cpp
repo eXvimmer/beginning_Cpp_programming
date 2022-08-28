@@ -2,48 +2,44 @@
 #include <string>
 #include <vector>
 
-using std::cout;
-using std::string;
-using std::vector;
-
 int main() {
   int num{100};
   int &r_num{num};
 
-  cout << num << '\n';
-  cout << r_num << '\n';
+  std::cout << num << '\n';
+  std::cout << r_num << '\n';
 
-  cout << "==================================\n";
+  std::cout << "==================================\n";
   num = 200;
-  cout << num << '\n';
-  cout << r_num << '\n';
+  std::cout << num << '\n';
+  std::cout << r_num << '\n';
 
-  cout << "==================================\n";
+  std::cout << "==================================\n";
   num = 300;
-  cout << num << '\n';
-  cout << r_num << '\n';
+  std::cout << num << '\n';
+  std::cout << r_num << '\n';
 
-  cout << "==================================\n";
-  vector<string> names{"Mustafa", "Malena", "Maya"};
+  std::cout << "==================================\n";
+  std::vector<std::string> names{"Mustafa", "Malena", "Maya"};
 
   for (auto s : names) { // s is a copy
     s = "Someone";
   }
 
   for (auto s : names) { // no changes
-    cout << s << ' ';
+    std::cout << s << ' ';
   }
-  cout << '\n';
+  std::cout << '\n';
 
-  cout << "==================================\n";
+  std::cout << "==================================\n";
   for (auto &r_name : names) {
     r_name = "M...A";
   }
 
   for (auto const &name : names) {
-    cout << name << ' ';
+    std::cout << name << ' ';
   }
-  cout << '\n';
+  std::cout << '\n';
 
   return 0;
 }

@@ -1,7 +1,5 @@
 #include <iostream>
 
-using std::cout;
-
 void print(const int *const pArr, int size);
 int *applyAll(const int *const pArr1, int size1, const int *const pArr2,
               int size2);
@@ -12,10 +10,10 @@ int main() {
   int array1[]{1, 2, 3, 4, 5};
   int array2[]{10, 20, 30};
 
-  cout << "array1: ";
+  std::cout << "array1: ";
   print(array1, 5);
 
-  cout << "array2: ";
+  std::cout << "array2: ";
   print(array2, 3);
 
   int *results1 = applyAll(array1, 5, array2, 3);
@@ -36,14 +34,14 @@ int main() {
    * standard requires the types in constant expressions to be literal types.
    */
 
-  cout << "results1: ";
+  std::cout << "results1: ";
   print(results1, results_size);
 
   delete[] results1;
 
   int *results2 = applyAll(array2, 3, array1, 5);
 
-  cout << "results2: ";
+  std::cout << "results2: ";
   print(results2, results_size);
 
   delete[] results2;
@@ -52,11 +50,11 @@ int main() {
 }
 
 void print(const int *const pArr, int size) {
-  cout << "[ ";
+  std::cout << "[ ";
   for (int i{0}; i < size; ++i) {
-    cout << pArr[i] << ' ';
+    std::cout << pArr[i] << ' ';
   }
-  cout << "]\n";
+  std::cout << "]\n";
 }
 
 int *applyAll(const int *const pArr1, int size1, const int *const pArr2,

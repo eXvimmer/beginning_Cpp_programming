@@ -2,51 +2,47 @@
 #include <string>
 #include <vector>
 
-using std::cout;
-using std::string;
-using std::vector;
-
 int main() {
   int score{100};
   int *pScore{&score};
 
-  cout << *pScore << '\n'; // dereference pScore, the value of score, 100
+  std::cout << *pScore << '\n'; // dereference pScore, the value of score, 100
 
   *pScore = 200; // dereference the pointer and change the value of score to 200
 
-  cout << *pScore << '\n';
-  cout << score << '\n';
+  std::cout << *pScore << '\n';
+  std::cout << score << '\n';
 
-  cout << "=================================\n";
+  std::cout << "=================================\n";
   double high_temp{40.7}, low_temp{7.9};
   double *pTemp{&high_temp};
 
-  cout << *pTemp << '\n';
+  std::cout << *pTemp << '\n';
   pTemp = &low_temp;
-  cout << *pTemp << '\n';
+  std::cout << *pTemp << '\n';
 
-  cout << "=================================\n";
-  string name{"Mustafa"};
-  string *pStr{&name};
+  std::cout << "=================================\n";
+  std::string name{"Mustafa"};
+  std::string *pStr{&name};
 
-  cout << *pStr << '\n';
+  std::cout << *pStr << '\n';
   name = "Malena";
-  cout << *pStr << '\n';
+  std::cout << *pStr << '\n';
 
-  cout << "=================================\n";
-  vector<string> skills{"programming", "hacking", "procrastinating"};
-  vector<string> *pVec{nullptr};
+  std::cout << "=================================\n";
+  std::vector<std::string> skills{"programming", "hacking", "procrastinating"};
+  std::vector<std::string> *pVec{nullptr};
 
   pVec = &skills;
 
-  cout << "My first skill is " << (*pVec).at(0) << '\n';
-  cout << "My second skill is " << pVec->at(1) << '\n';
+  std::cout << "My first skill is " << (*pVec).at(0) << '\n';
+  std::cout << "My second skill is " << pVec->at(1) << '\n';
 
-  cout << "My skills are:\n";
-  for (string s : *pVec) {
-    cout << s << ' ';
+  std::cout << "My skills are:\n";
+  for (std::string s : *pVec) {
+    std::cout << s << ' ';
   }
-  cout << std::endl;
+  std::cout << std::endl;
 
   return 0;
 }

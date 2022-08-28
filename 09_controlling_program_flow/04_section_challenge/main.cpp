@@ -2,32 +2,28 @@
 #include <iostream>
 #include <vector>
 
-using std::cin;
-using std::cout;
-using std::vector;
-
 void showOptions();
-void printNums(const vector<int> *nums);
-void addANumber(int num, vector<int> *nums);
-bool contains(const vector<int> *vec, const int &elem);
-void calcMean(const vector<int> &vec);
-void findSmallest(const vector<int> &vec);
-void findLargest(const vector<int> &vec);
+void printNums(const std::vector<int> *nums);
+void addANumber(int num, std::vector<int> *nums);
+bool contains(const std::vector<int> *vec, const int &elem);
+void calcMean(const std::vector<int> &vec);
+void findSmallest(const std::vector<int> &vec);
+void findLargest(const std::vector<int> &vec);
 
 int main() {
   char choice{};
-  vector<int> nums{};
+  std::vector<int> nums{};
 
   showOptions();
-  cin >> choice;
+  std::cin >> choice;
 
   while (choice != 'Q' && choice != 'q') {
     if (choice == 'P' || choice == 'p') {
       printNums(&nums);
     } else if (choice == 'A' || choice == 'a') {
       int num{};
-      cout << "Enter an integer to add to the list: ";
-      cin >> num;
+      std::cout << "Enter an integer to add to the list: ";
+      std::cin >> num;
       addANumber(num, &nums);
     } else if (choice == 'M' || choice == 'm') {
       calcMean(nums);
@@ -36,53 +32,53 @@ int main() {
     } else if (choice == 'L' || choice == 'l') {
       findLargest(nums);
     } else {
-      cout << "Unknown selection, please try again.\n";
+      std::cout << "Unknown selection, please try again.\n";
     }
 
     showOptions();
-    cin >> choice;
+    std::cin >> choice;
   }
 
-  cout << "GoodBye...\n";
+  std::cout << "GoodBye...\n";
 
   return 0;
 }
 
 void showOptions() {
-  cout << "\n";
-  cout << "P - Print numbers\n";
-  cout << "A - Add a number\n";
-  cout << "M - Display mean of numbers\n";
-  cout << "S - Display the smallest number\n";
-  cout << "L - Display the largest number\n";
-  cout << "Q - Quit\n";
+  std::cout << "\n";
+  std::cout << "P - Print numbers\n";
+  std::cout << "A - Add a number\n";
+  std::cout << "M - Display mean of numbers\n";
+  std::cout << "S - Display the smallest number\n";
+  std::cout << "L - Display the largest number\n";
+  std::cout << "Q - Quit\n";
 
-  cout << "Enter your choice: ";
+  std::cout << "Enter your choice: ";
 }
 
-void printNums(const vector<int> *pNums) {
+void printNums(const std::vector<int> *pNums) {
   if (pNums->empty()) {
-    cout << "[]\n";
+    std::cout << "[]\n";
     return;
   } else {
-    cout << "[ ";
+    std::cout << "[ ";
     for (int el : *pNums) {
-      cout << el << " ";
+      std::cout << el << " ";
     }
-    cout << "]\n";
+    std::cout << "]\n";
   }
 }
 
-void addANumber(int num, vector<int> *nums) {
+void addANumber(int num, std::vector<int> *nums) {
   if (contains(nums, num)) {
-    cout << num << " is already in the list.\n";
+    std::cout << num << " is already in the list.\n";
   } else {
     nums->push_back(num);
-    cout << num << " added\n";
+    std::cout << num << " added\n";
   }
 }
 
-bool contains(const vector<int> *vec, const int &elem) {
+bool contains(const std::vector<int> *vec, const int &elem) {
   if (vec->empty()) {
     return false;
   }
@@ -95,10 +91,10 @@ bool contains(const vector<int> *vec, const int &elem) {
   return result;
 }
 
-void calcMean(const vector<int> &vec) {
+void calcMean(const std::vector<int> &vec) {
   if (vec.empty()) {
-    cout << "The list is empty.\n";
-    cout << "0\n";
+    std::cout << "The list is empty.\n";
+    std::cout << "0\n";
     return;
   }
 
@@ -108,12 +104,12 @@ void calcMean(const vector<int> &vec) {
     sum += el;
   }
 
-  cout << "The mean is " << sum / vec.size() << '\n';
+  std::cout << "The mean is " << sum / vec.size() << '\n';
 }
 
-void findSmallest(const vector<int> &vec) {
+void findSmallest(const std::vector<int> &vec) {
   if (vec.empty()) {
-    cout << "The list is empty.\n";
+    std::cout << "The list is empty.\n";
     return;
   }
 
@@ -123,12 +119,12 @@ void findSmallest(const vector<int> &vec) {
       smallest = el;
   }
 
-  cout << "The smallest numer is " << smallest << '\n';
+  std::cout << "The smallest numer is " << smallest << '\n';
 }
 
-void findLargest(const vector<int> &vec) {
+void findLargest(const std::vector<int> &vec) {
   if (vec.empty()) {
-    cout << "The list is empty.\n";
+    std::cout << "The list is empty.\n";
     return;
   }
 
@@ -138,5 +134,5 @@ void findLargest(const vector<int> &vec) {
       largest = el;
   }
 
-  cout << "The largest numer is " << largest << '\n';
+  std::cout << "The largest numer is " << largest << '\n';
 }

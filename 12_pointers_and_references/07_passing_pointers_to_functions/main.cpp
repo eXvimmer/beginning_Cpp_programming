@@ -2,46 +2,42 @@
 #include <string>
 #include <vector>
 
-using std::cout;
-using std::string;
-using std::vector;
-
 void doubleIt(int *val);
 
 void swap(int *a, int *b);
 
-void display(vector<string> *vec);
+void display(std::vector<std::string> *vec);
 void display(int *array, int sentinel);
 
 int main() {
   int value{13};
   int *pVal{nullptr};
 
-  cout << "Value is " << value << '\n';
+  std::cout << "Value is " << value << '\n';
   doubleIt(&value);
-  cout << "Value is " << value << '\n';
+  std::cout << "Value is " << value << '\n';
 
-  cout << "====================================\n";
+  std::cout << "====================================\n";
 
   pVal = &value;
   doubleIt(pVal);
-  cout << "Value is " << value << '\n';
+  std::cout << "Value is " << value << '\n';
 
-  cout << "====================================\n";
+  std::cout << "====================================\n";
   int x{100}, y{200};
-  cout << "x is " << x << '\n';
-  cout << "y is " << y << '\n';
+  std::cout << "x is " << x << '\n';
+  std::cout << "y is " << y << '\n';
 
   swap(&x, &y);
 
-  cout << "x is " << x << '\n';
-  cout << "y is " << y << '\n';
+  std::cout << "x is " << x << '\n';
+  std::cout << "y is " << y << '\n';
 
-  cout << "====================================\n";
-  vector<string> names{"Amadeus", "Rubuis", "Morbius", "Dovahkiin"};
+  std::cout << "====================================\n";
+  std::vector<std::string> names{"Amadeus", "Rubuis", "Morbius", "Dovahkiin"};
   display(&names);
 
-  cout << "====================================\n";
+  std::cout << "====================================\n";
   int scores[]{100, 99, 98, -1};
   display(scores, -1);
 
@@ -58,15 +54,15 @@ void swap(int *a, int *b) {
   *b = temp;
 }
 
-void display(vector<string> *vec) {
-  for (string s : *vec)
-    cout << s << ' ';
+void display(std::vector<std::string> *vec) {
+  for (std::string s : *vec)
+    std::cout << s << ' ';
 
-  cout << '\n';
+  std::cout << '\n';
 }
 
 void display(int *array, int sentinel) {
   while (*array != sentinel)
-    cout << *array++ << ' ';
-  cout << '\n';
+    std::cout << *array++ << ' ';
+  std::cout << '\n';
 }

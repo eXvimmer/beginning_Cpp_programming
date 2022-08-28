@@ -1,7 +1,5 @@
 #include <iostream>
 
-using std::cout;
-
 void print_array(const int arr[], size_t size);
 // set each array element to value
 void set_array(int arr[], size_t size, int val);
@@ -18,9 +16,9 @@ int main() {
 
 void print_array(const int arr[], size_t size) {
   for (size_t i{0}; i < size; ++i)
-    cout << arr[i] << ' ';
+    std::cout << arr[i] << ' ';
 
-  cout << '\n';
+  std::cout << '\n';
 }
 
 void set_array(int arr[], size_t size, int val) {

@@ -1,8 +1,5 @@
 #include <iostream>
 
-using std::cin;
-using std::cout;
-
 int *createArray(size_t size, int init_value = 0);
 void display(const int *const array, size_t size);
 
@@ -11,13 +8,13 @@ int main() {
   size_t size{};
   int init_value{};
 
-  cout << "How many integers would you like to allocate? ";
-  cin >> size;
-  cout << "What value would you like them initialized to? ";
-  cin >> init_value;
+  std::cout << "How many integers would you like to allocate? ";
+  std::cin >> size;
+  std::cout << "What value would you like them initialized to? ";
+  std::cin >> init_value;
 
   pArray = createArray(size, init_value);
-  cout << "\n=====================================================\n";
+  std::cout << "\n=====================================================\n";
   display(pArray, size);
 
   // NOTE: Always use a TODO comment when you're using a pointer to heap
@@ -41,7 +38,7 @@ int *createArray(size_t size, int init_value) {
 
 void display(const int *const array, size_t size) {
   for (size_t i{0}; i < size; ++i) {
-    cout << array[i] << ' ';
+    std::cout << array[i] << ' ';
   }
-  cout << '\n';
+  std::cout << '\n';
 }

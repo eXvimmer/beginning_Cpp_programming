@@ -2,68 +2,64 @@
 #include <string>
 #include <vector>
 
-using std::cout;
-using std::string;
-using std::vector;
-
 void changeTheReference(int &rNum);
-void changeTheReference(string &rStr);
-void changeTheReference(vector<string> &rVec);
-void printVector(const vector<string> &rVec);
+void changeTheReference(std::string &rStr);
+void changeTheReference(std::vector<std::string> &rVec);
+void printVector(const std::vector<std::string> &rVec);
 
 int main() {
   int num{10}, another_num{20};
 
-  cout << "num before calling changeTheReference: " << num << '\n';
+  std::cout << "num before calling changeTheReference: " << num << '\n';
 
   changeTheReference(num);
 
-  cout << "num after calling changeTheReference: " << num << '\n';
+  std::cout << "num after calling changeTheReference: " << num << '\n';
 
-  cout << "another_num before calling changeTheReference: " << another_num
-       << '\n';
+  std::cout << "another_num before calling changeTheReference: " << another_num
+            << '\n';
 
   changeTheReference(another_num);
 
-  cout << "another_num after calling changeTheReference: " << another_num
-       << '\n';
+  std::cout << "another_num after calling changeTheReference: " << another_num
+            << '\n';
 
-  cout << "\n=======================================================\n";
+  std::cout << "\n=======================================================\n";
 
-  string name{"Mustafa"};
+  std::string name{"Mustafa"};
 
-  cout << "name before calling changeTheReference: " << name << '\n';
+  std::cout << "name before calling changeTheReference: " << name << '\n';
 
   changeTheReference(name);
 
-  cout << "name after calling changeTheReference: " << name << '\n';
+  std::cout << "name after calling changeTheReference: " << name << '\n';
 
-  cout << "=======================================================\n";
+  std::cout << "=======================================================\n";
 
-  vector<string> foods{"Pizza", "Cheese", "Wine"};
+  std::vector<std::string> foods{"Pizza", "Cheese", "Wine"};
 
-  cout << "foods before calling changeTheReference:\n";
+  std::cout << "foods before calling changeTheReference:\n";
   printVector(foods);
 
   changeTheReference(foods);
 
-  cout << "foods after calling changeTheReference:\n";
+  std::cout << "foods after calling changeTheReference:\n";
   printVector(foods);
 
   return 0;
 }
 
 void changeTheReference(int &rNum) { rNum = 13; }
-void changeTheReference(string &rStr) { rStr = "Changed"; }
-void changeTheReference(vector<string> &rVec) { rVec.clear(); }
+void changeTheReference(std::string &rStr) { rStr = "Changed"; }
+void changeTheReference(std::vector<std::string> &rVec) { rVec.clear(); }
 
-void printVector(const vector<string> &rVec) {
+void printVector(const std::vector<std::string> &rVec) {
   if (rVec.size() == 0) {
-    cout << "[]\n";
+    std::cout << "[]\n";
     return;
   }
 
-  for (string s : rVec) {
-    cout << s << '\n';
+  for (std::string s : rVec) {
+    std::cout << s << '\n';
   }
 }
