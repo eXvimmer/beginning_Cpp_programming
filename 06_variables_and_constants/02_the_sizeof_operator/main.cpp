@@ -32,12 +32,11 @@ int main() {
   std::cout << "sizeof using variable names:\n";
   int age{29};
   std::cout << "age is " << sizeof(age) << " bytes.\n";
-  // or
+  /* NOTE: You can omit the parantheses for sizeof variables (not types) */
   std::cout << "age is " << sizeof age << " bytes.\n";
 
   double wage{99.99};
   std::cout << "wage is " << sizeof(wage) << " bytes.\n";
-  // or
   std::cout << "wage is " << sizeof wage << " bytes.\n";
   return 0;
 }

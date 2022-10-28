@@ -50,7 +50,9 @@ int main() {
 }
 
 void changeTheReference(int &rNum) { rNum = 13; }
+
 void changeTheReference(std::string &rStr) { rStr = "Changed"; }
+
 void changeTheReference(std::vector<std::string> &rVec) { rVec.clear(); }
 
 void printVector(const std::vector<std::string> &rVec) {

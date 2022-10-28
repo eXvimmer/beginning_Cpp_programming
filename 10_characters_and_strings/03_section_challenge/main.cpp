@@ -7,6 +7,7 @@
 #include <string>
 
 int main() {
+  /* TODO: add numbers and important symbols too */
   std::string alphabet{"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
   std::string key{"XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
   std::string message{};
