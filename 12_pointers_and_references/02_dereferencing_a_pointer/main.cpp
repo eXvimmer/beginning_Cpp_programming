@@ -30,7 +30,8 @@ int main() {
   std::cout << *pStr << '\n';
 
   std::cout << "=================================\n";
-  std::vector<std::string> skills{"programming", "hacking", "procrastinating"};
+  std::vector<std::string> skills{"web development", "game development",
+                                  "game art"};
   std::vector<std::string> *pVec{nullptr};
 
   pVec = &skills;

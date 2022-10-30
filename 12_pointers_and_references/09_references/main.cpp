@@ -5,6 +5,7 @@
 int main() {
   int num{100};
   int &r_num{num};
+  // NOTE: References can't be null. So if you have a null value, use a pointer.
 
   std::cout << num << '\n';
   std::cout << r_num << '\n';
@@ -22,7 +23,7 @@ int main() {
   std::cout << "==================================\n";
   std::vector<std::string> names{"Mustafa", "Malena", "Maya"};
 
-  for (auto s : names) { // s is a copy
+  for (auto s : names) { // NOTE: s is a copy
     s = "Someone";
   }
 
@@ -30,10 +31,12 @@ int main() {
     std::cout << s << ' ';
   }
   std::cout << '\n';
+  // NOTE: it's better to use [constant] references with these kinds of loops to
+  // avoid having unnecessary copies.
 
   std::cout << "==================================\n";
-  for (auto &r_name : names) {
-    r_name = "M...A";
+  for (std::string &name : names) {
+    name = "M...A";
   }
 
   for (auto const &name : names) {

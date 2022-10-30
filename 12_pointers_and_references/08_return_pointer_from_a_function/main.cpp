@@ -1,6 +1,6 @@
 #include <iostream>
 
-int *createArray(size_t size, int init_value = 0);
+int *createArrayOnHeap(size_t size, int init_value = 0);
 void display(const int *const array, size_t size);
 
 int main() {
@@ -13,7 +13,7 @@ int main() {
   std::cout << "What value would you like them initialized to? ";
   std::cin >> init_value;
 
-  pArray = createArray(size, init_value);
+  pArray = createArrayOnHeap(size, init_value);
   std::cout << "\n=====================================================\n";
   display(pArray, size);
 
@@ -23,10 +23,15 @@ int main() {
   return 0;
 }
 
-int *createArray(size_t size, int init_value) {
+int *createArrayOnHeap(size_t size, int init_value) {
+  // NOTE: NEVER create an uninitialized pointer.
   int *new_storage{nullptr};
+  // WARN: NEVER return a pointer to a local variable; Because after function
+  // termination, the stack will be popped out. So you should use the heap, or a
+  // pointer that is in a safe scope.
   new_storage = new int[size];
-  // WARNING: new_storage is on the heap, deallocate after using it
+  // NOTE: you should if new failed or not.
+  // TODO: new_storage is on the heap, deallocate it after using.
 
   for (size_t i{0}; i < size; ++i) {
     *(new_storage + i) = init_value;
@@ -39,6 +44,7 @@ int *createArray(size_t size, int init_value) {
 void display(const int *const array, size_t size) {
   for (size_t i{0}; i < size; ++i) {
     std::cout << array[i] << ' ';
+    /* std::cout << *(array + i) << ' '; */
   }
   std::cout << '\n';
 }

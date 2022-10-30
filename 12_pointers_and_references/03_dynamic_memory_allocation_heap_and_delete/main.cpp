@@ -11,7 +11,7 @@ int main() {
    * leak and we cannot deallocate the pInt.
    */
 
-  delete pInt; // free allocated storage
+  delete pInt; // deallocate; free allocated storage
 
   size_t size{0};
   double *pDouble{nullptr};

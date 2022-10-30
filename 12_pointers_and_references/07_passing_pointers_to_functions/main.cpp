@@ -61,6 +61,7 @@ void display(std::vector<std::string> *vec) {
   std::cout << '\n';
 }
 
+/* void display(int array[], int sentinel) { */
 void display(int *array, int sentinel) {
   while (*array != sentinel)
     std::cout << *array++ << ' ';
