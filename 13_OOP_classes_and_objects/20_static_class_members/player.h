@@ -8,15 +8,19 @@ public:
   Player(std::string n, int h, int x);
   Player();
   Player(std::string name_val);
+  Player(const Player &);
+  ~Player();
   void set_name(std::string);
-  // by using const we guarantee that the method won't change the object, unless
-  // we set an attribute as mutable
   std::string get_name() const;
+  int get_health() const;
+  int get_xp() const;
+  static int get_players_count(); // NOTE: static methods have only access to
+                                  // static properties.
 
 private:
+  static int num_players;
   std::string name;
   int health;
-  /* mutable int xp; */
   int xp;
 };
 
