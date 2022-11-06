@@ -26,3 +26,13 @@ std::ostream &operator<<(std::ostream &os, const Account &account) {
      << std::endl;
   return os;
 }
+
+Account &operator+=(Account &account, double amount) {
+  account.deposit(amount);
+  return account;
+}
+
+Account &operator-=(Account &account, double amount) {
+  account.withdraw(amount);
+  return account;
+}

@@ -17,6 +17,9 @@ int main() {
   accounts.push_back(Account{"Moe", 2000});
   accounts.push_back(Account{"Curly", 5000});
 
+  accounts.at(0) += 1000; // deposit
+  accounts.at(0) -= 700;  // withdraw
+
   display(accounts);
   deposit(accounts, 1000);
   withdraw(accounts, 2000);
@@ -27,6 +30,9 @@ int main() {
   sav_accounts.push_back(SavingsAccount{"Superman"});
   sav_accounts.push_back(SavingsAccount{"Batman", 2000});
   sav_accounts.push_back(SavingsAccount{"Wonderwoman", 5000, 5.0});
+
+  sav_accounts.at(0) += 1000;
+  sav_accounts.at(0) -= 700;
 
   display(sav_accounts);
   deposit(sav_accounts, 1000);
@@ -39,6 +45,9 @@ int main() {
   check_accounts.push_back(CheckingAccount{"Spock", 2000});
   check_accounts.push_back(CheckingAccount{"Bones", 5000});
 
+  check_accounts.at(0) += 1000;
+  check_accounts.at(0) -= 700;
+
   display(check_accounts);
   deposit(check_accounts, 1000);
   withdraw(check_accounts, 2000);
@@ -49,6 +58,9 @@ int main() {
   trust_accounts.push_back(TrustAccount{"Athos", 10000, 5.0});
   trust_accounts.push_back(TrustAccount{"Porthos", 20000, 4.0});
   trust_accounts.push_back(TrustAccount{"Aramis", 30000});
+
+  trust_accounts.at(0) += 1000;
+  trust_accounts.at(0) -= 150;
 
   display(trust_accounts);
   deposit(trust_accounts, 1000);

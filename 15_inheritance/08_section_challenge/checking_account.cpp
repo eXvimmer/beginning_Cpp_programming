@@ -14,3 +14,13 @@ std::ostream &operator<<(std::ostream &os, const CheckingAccount &account) {
      << ", with $" << CheckingAccount::withdrawal_fee << " per check fee.\n";
   return os;
 }
+
+CheckingAccount &operator+=(CheckingAccount &account, double amount) {
+  account.deposit(amount);
+  return account;
+}
+
+CheckingAccount &operator-=(CheckingAccount &account, double amount) {
+  account.withdraw(amount);
+  return account;
+}

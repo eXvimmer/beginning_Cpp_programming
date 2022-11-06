@@ -13,6 +13,8 @@ public:
   // inherits Account::withdraw methods
   friend std::ostream &operator<<(std::ostream &os,
                                   const SavingsAccount &account);
+  friend SavingsAccount &operator+=(SavingsAccount &account, double amount);
+  friend SavingsAccount &operator-=(SavingsAccount &account, double amount);
 
 protected:
   double int_rate;

@@ -11,6 +11,8 @@ public:
   bool withdraw(double amount);
   double get_balance() const;
   friend std::ostream &operator<<(std::ostream &os, const Account &account);
+  friend Account &operator+=(Account &account, double amount);
+  friend Account &operator-=(Account &account, double amount);
 
 protected:
   std::string name;

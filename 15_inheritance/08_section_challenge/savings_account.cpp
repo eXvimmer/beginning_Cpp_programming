@@ -14,3 +14,13 @@ std::ostream &operator<<(std::ostream &os, const SavingsAccount &account) {
      << ", intereset rate: " << account.int_rate << "%\n";
   return os;
 }
+
+SavingsAccount &operator+=(SavingsAccount &account, double amount) {
+  account.deposit(amount);
+  return account;
+}
+
+SavingsAccount &operator-=(SavingsAccount &account, double amount) {
+  account.withdraw(amount);
+  return account;
+}

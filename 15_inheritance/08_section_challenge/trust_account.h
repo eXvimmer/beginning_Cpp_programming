@@ -13,6 +13,8 @@ public:
   bool withdraw(double amount);
   friend std::ostream &operator<<(std::ostream &os,
                                   const TrustAccount &account);
+  friend TrustAccount &operator+=(TrustAccount &account, double amount);
+  friend TrustAccount &operator-=(TrustAccount &account, double amount);
 
 protected:
   short withdrawal_count;

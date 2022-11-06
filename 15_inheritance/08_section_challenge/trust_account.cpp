@@ -24,3 +24,13 @@ std::ostream &operator<<(std::ostream &os, const TrustAccount &account) {
      << account.withdrawal_count << std::endl;
   return os;
 }
+
+TrustAccount &operator+=(TrustAccount &account, double amount) {
+  account.deposit(amount);
+  return account;
+}
+
+TrustAccount &operator-=(TrustAccount &account, double amount) {
+  account.withdraw(amount);
+  return account;
+}
