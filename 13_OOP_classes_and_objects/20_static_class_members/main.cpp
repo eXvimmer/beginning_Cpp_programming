@@ -3,7 +3,7 @@
 #include <iostream>
 
 void display_active_players() {
-  auto count{Player::get_players_count()};
+  auto count = Player::get_players_count(); // Prefere = when using auto
   std::cout << count << " active player" << (count == 1 ? "\n" : "s\n");
 }
 
