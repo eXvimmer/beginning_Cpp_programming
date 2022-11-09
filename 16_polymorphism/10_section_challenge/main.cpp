@@ -6,14 +6,12 @@
 #include <iostream>
 #include <memory>
 
-using namespace std;
-
 int main() {
   CheckingAccount frank{"Frank", 5000};
-  cout << frank << endl;
+  std::cout << frank << std::endl;
 
   Account *trust{new TrustAccount("James")};
-  cout << *trust << endl;
+  std::cout << *trust << std::endl;
 
   Account *p1{new CheckingAccount("Larry", 10000)};
   Account *p2{new SavingsAccount("Moe", 1000)};
