@@ -59,7 +59,6 @@ int main() {
             << std::setw(field3_width) << std::right << "Population"
             << std::setw(field4_width) << std::right << "Price" << std::endl;
   std::cout << std::setw(total_width) << std::setfill('-') << "" << std::endl;
-
   std::cout << std::setfill(' '); // reset setfill to blank spaces
   std::cout << std::setprecision(2) << std::fixed;
 
