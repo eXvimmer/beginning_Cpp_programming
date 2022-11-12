@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-  /* std::ifstream in_file{"test.txt", std::ios::binary}; */
+  /* std::ifstream in_file{"test.txt", std::ios::binary | std::ios::in}; */
   std::ifstream in_file;
   in_file.open("./test.txt"); // path is relative to the binary executable
   /* if (!in_file.is_open()) */
