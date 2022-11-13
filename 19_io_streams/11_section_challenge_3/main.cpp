@@ -17,18 +17,18 @@ int main() {
   }
   std::string target_word, current_word;
   int words_count{0};
-  int occurance{0};
+  int occurence{0};
   std::cout << "Enter the word that you want to find: ";
   std::cin >> target_word;
   while (in_file >> current_word) {
     ++words_count;
     if (find_substring(target_word, current_word)) {
-      ++occurance;
+      ++occurence;
     }
   }
   in_file.close();
   std::cout << "Searched " << words_count << " words\n";
-  std::cout << "Found " << occurance << " occurance of the word '"
+  std::cout << "Found " << occurence << " occurence of the word '"
             << target_word << "'\n";
   return 0;
 }
