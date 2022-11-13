@@ -1,6 +1,6 @@
 #include <iostream>
 
-// NOTE: Don't use macros, use templates instead.
+// WARN: Don't use macros, use templates instead.
 
 // NOTE: wrap each argument of the macro with parenthesis.
 
